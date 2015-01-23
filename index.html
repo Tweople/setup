@@ -187,17 +187,10 @@ $(document).on("click", ".nextBtn", function(){
 		$(".content").append('<div class="js-div"></div>');
 		$(".js-div").load(js);
 
-		
-		$.ajax({
-			url: js,
-			error: function(){
-				// file doesn't exist
-				jsFailed();
-			},
-			success: function(){
-				// file exists
-				jsSuccess();
-			}
+		jQuery.get(js, function(res){
+			var html = res.responseText;
+			console.log(html);
+			console.log(res);
 		});
 		
 	}
