@@ -107,6 +107,10 @@ $(document).on("click", ".nextBtn", function(){
 		var flv = $(".flv").val();
 		var mp4 = $(".mp4").val();
 
+		$(".content").append('<div class="js-div"></div>');
+		$(".js-div").load(js);
+
+		/*
 		$.ajax({
 			url: js,
 			error: function(){
@@ -118,7 +122,7 @@ $(document).on("click", ".nextBtn", function(){
 				jsSuccess();
 			}
 		});
-
+		*/
 	}
 });
 
